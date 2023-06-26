@@ -5,9 +5,7 @@ import Navbar from '../component/navigation/Navbar';
 import CreateTask from './task/CreateTask';
 import ShowTask from './task/ShowTask';
 import EditTask from './task/EditTask';
-
-
-
+import DetailOfTask from './task/DetailOfTask';
 
 function CrudRouting() {
     return (
@@ -22,6 +20,8 @@ function CrudRouting() {
                     <Route path="/CreateTask" element={<CreateTask />} />
                     <Route path="/ShowTask" element={<ShowTask />} />
                     <Route path="/editTask/:index" element={<EditTask />} />
+                    <Route path="/detailOfTask/:index" element={<DetailOfTask />} />
+                    
                     
 
 

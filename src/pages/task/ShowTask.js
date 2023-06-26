@@ -32,8 +32,6 @@ function ShowTask() {
         localStorage.setItem('taskInfo', newArrStringifyData)
 
     }
-
-
     const handleEditTaskData = (item, clickItemIndex) => {
         navigate(`/editTask/${clickItemIndex}`, {
             state: {
@@ -41,18 +39,14 @@ function ShowTask() {
 
             }
         })
+    }
 
-
-        // setEditTaskIndex(clickItemIndex)
-
-        // setTaskData({
-        //     date: item.date,
-        //     projectTitle: item.projectTitle,
-        //     projectDescription: item.projectDescription,
-        //     uiTechnology: item.uiTechnology,
-        //     backendtechnology: item.backendtechnology,
-        //     libraryUsed: item.libraryUsed
-        // })
+   const handleTaskDetailData=(item,clickItemIndex)=>{
+    navigate(`/detailOfTask/${clickItemIndex}`,{
+        state:{
+            task:{...item}
+        }
+    })
 
     }
 
@@ -88,6 +82,7 @@ function ShowTask() {
                                         <td>
                                             <button type="button" onClick={() => handleDeleteTaskData(index)} >Delete</button>
                                             <button type="button" onClick={() => handleEditTaskData(item, index)}>Edit</button>
+                                            <button type='button' onClick={()=>handleTaskDetailData(item,index)}>TaskDetails</button>
                                         </td>
 
                                     </tr>
